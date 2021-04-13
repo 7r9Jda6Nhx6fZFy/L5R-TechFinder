@@ -25,7 +25,7 @@ def create_app(test_config=None):
         pass
 
     from . import db
-    db.init_app(app)
+    #db.init_app(app)
 
     from . import tech
     app.register_blueprint(tech.bp)
