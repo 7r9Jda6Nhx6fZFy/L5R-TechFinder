@@ -1,30 +1,33 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-{% block header %}
-    <h1>{% block title %}{{ tech['name'] }}{% endblock %}</h1>
-{% endblock %}
+{% extends 'base.html' %}
 
 {% block content %}
-    <article class="post">
+    <div class="container-fluid">
+        <h1>{{ tech['name'] }}</h1>
         {% if tech['ring'] is not none %}
-            <p class="body"><strong>Anneau:</strong> {{ tech['ring'] }}</p>
+            <p><strong>Anneau:</strong> {{ tech['ring'] }}</p>
         {% endif %}
-        <p class="body"><strong>Type:</strong> {{ tech['type'] }}</p>
-        <p class="body"><strong>Rang:</strong> {{ tech['rank'] }}</p>
+        <p><strong>Type:</strong> {{ tech['type'] }}</p>
+        <p><strong>Rang:</strong> {{ tech['rank'] }}</p>
         {% if tech['category'] is not none %}
-            <p class="body"><strong>Catégorie:</strong> {{ tech['category'] }}</p>
+            <p><strong>Catégorie:</strong> {{ tech['category'] }}</p>
         {% endif %}
         {% if tech['prerequisite'] is not none %}
-            <p class="body"><strong>Prérequis:</strong> {{ tech['prerequisite'] }}</p>
+            <p><strong>Prérequis:</strong> {{ tech['prerequisite'] }}</p>
         {% endif %}
         {% if tech['activation'] is not none %}
-            <p class="body"><strong>Activation:</strong> {{ tech['activation'] }}</p>
+            <p><strong>Activation:</strong>
+                <br>{{ tech['activation'] }}</p>
         {% endif %}
         {% if tech['effect'] is not none %}
-            <p class="body"><strong>Effets:</strong> {{ tech['effect'] }}</p>
+            <p><strong>Effets:</strong>
+                <br>{{ tech['effect'] }}</p>
         {% endif %}
         {% if tech['opportunity'] is not none %}
-            <p class="body"><strong>Aubaines:</strong> {{ tech['opportunity'] }}</p>
+            <p><strong>Aubaines:</strong>
+                <br>{{ tech['opportunity'] }}</p>
         {% endif %}
-    </article>
+        {% if tech['book'] is not none %}
+            <p><strong>Livre:</strong> {{ tech['book'] }}</p>
+        {% endif %}
+    </div>
 {% endblock %}
