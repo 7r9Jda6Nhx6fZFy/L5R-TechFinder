@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+{% block header %}
+    <h1>{% block title %}{{ tech['name'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <article class="post">
+        {% if tech['ring'] is not none %}
+            <p class="body"><strong>Anneau:</strong> {{ tech['ring'] }}</p>
+        {% endif %}
+        <p class="body"><strong>Type:</strong> {{ tech['type'] }}</p>
+        <p class="body"><strong>Rang:</strong> {{ tech['rank'] }}</p>
+        {% if tech['category'] is not none %}
+            <p class="body"><strong>Catégorie:</strong> {{ tech['category'] }}</p>
+        {% endif %}
+        {% if tech['prerequisite'] is not none %}
+            <p class="body"><strong>Prérequis:</strong> {{ tech['prerequisite'] }}</p>
+        {% endif %}
+        {% if tech['activation'] is not none %}
+            <p class="body"><strong>Activation:</strong> {{ tech['activation'] }}</p>
+        {% endif %}
+        {% if tech['effect'] is not none %}
+            <p class="body"><strong>Effets:</strong> {{ tech['effect'] }}</p>
+        {% endif %}
+        {% if tech['opportunity'] is not none %}
+            <p class="body"><strong>Aubaines:</strong> {{ tech['opportunity'] }}</p>
+        {% endif %}
+    </article>
+{% endblock %}
