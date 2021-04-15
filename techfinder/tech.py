@@ -25,7 +25,7 @@ def dict_list_from_row(rows):
 def index():
     db = get_db()
     techs_rows = db.execute(
-        'SELECT id, name, type, category, rank, prerequisite, ring FROM techniques'
+        'SELECT id, name, type, category, rank, ring FROM techniques'
     ).fetchall()
 
     techs = dict_list_from_row(techs_rows)
