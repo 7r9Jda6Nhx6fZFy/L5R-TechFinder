@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <div class="container-fluid">
         <h1>{{ tech['name'] }}</h1>
         {% if tech['ring'] is not none %}
@@ -12,16 +13,25 @@
             <p><strong>Catégorie:</strong> {{ tech['category'] }}</p>
         {% endif %}
         {% if tech['activation'] is not none %}
-            <p><strong>Activation:</strong>
-                <br>{{ tech['activation'] }}</p>
+            <p id="activation"></p>
+            <script>
+                document.getElementById('activation').innerHTML =
+                    marked("<strong>Activation:</strong><br>{{ tech['activation'] | replace('\r\n', '<br>') | safe }}");
+            </script>
         {% endif %}
         {% if tech['effect'] is not none %}
-            <p><strong>Effets:</strong>
-                <br>{{ tech['effect'] }}</p>
+            <p id="effect"></p>
+            <script>
+                document.getElementById('effect').innerHTML =
+                    marked("<strong>Effets:</strong><br>{{ tech['effect'] | replace('\r\n', '<br>') | safe }}");
+            </script>
         {% endif %}
         {% if tech['opportunity'] is not none %}
-            <p><strong>Aubaines:</strong>
-                <br>{{ tech['opportunity'] }}</p>
+            <p id="opportunity"></p>
+            <script>
+                document.getElementById('opportunity').innerHTML =
+                  marked("<strong>Aubaines:</strong><br>{{ tech['opportunity'] | replace('\r\n', '<br>') | safe }}");
+            </script>
         {% endif %}
         {% if tech['book'] is not none %}
             <p><strong>Livre:</strong> {{ tech['book'] }}</p>

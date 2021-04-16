@@ -80,7 +80,6 @@
         var tabledata = JSON.parse('{{ techs | tojson | safe }}');
         var table = new Tabulator("#tech-table", {
           rowSelected:function(row){
-            console.log(table.getSelectedData()[0]['id']);
             idChange(table.getSelectedData()[0]['id']);
           },
           data:tabledata,
