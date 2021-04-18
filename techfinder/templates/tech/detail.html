@@ -30,7 +30,7 @@
             <p id="opportunity"></p>
             <script>
                 document.getElementById('opportunity').innerHTML =
-                  marked("<strong>Aubaines:</strong><br>{{ tech['opportunity'] | replace('\r\n', '<br>') | safe }}");
+                  marked("<strong>Aubaines:</strong><br>{{ tech['opportunity'] | replace('\r\n', '<br>') | safe }}", {pedantic:true});
             </script>
         {% endif %}
         {% if tech['book'] is not none %}
