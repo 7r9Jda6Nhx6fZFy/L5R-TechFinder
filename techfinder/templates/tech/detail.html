@@ -4,11 +4,6 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <div class="container-fluid">
         <h1>{{ tech['name'] }}</h1>
-        <p id="test"></p>
-        <script>
-            document.getElementById('test').innerHTML =
-                marked("A**\+:**");
-        </script>
         {% if tech['ring'] is not none %}
             <p><strong>Anneau:</strong> {{ tech['ring'] }}</p>
         {% endif %}
