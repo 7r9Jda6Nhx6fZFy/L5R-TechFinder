@@ -65,8 +65,7 @@
             table.addFilter("type", "=", typeFilterVal);
           }
           if(ringFilterVal){
-            table.addFilter("ring", "=", ringFilterVal);
-            table.addFilter("ring", "=", "");
+            table.addFilter("ring", "in", [ringFilterVal, ""]);
           }
           if(categoryFilterVal){
             table.addFilter("category", "=", categoryFilterVal);
