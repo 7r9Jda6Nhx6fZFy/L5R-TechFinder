@@ -78,6 +78,7 @@
         document.getElementById("filter-category").addEventListener("change", updateFilter);
 
         var tabledata = JSON.parse('{{ techs | tojson | safe }}');
+        console.log(tabledata);
         var table = new Tabulator("#tech-table", {
           rowSelected:function(row){
             idChange(table.getSelectedData()[0]['id']);
